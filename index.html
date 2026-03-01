@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация пользователя</title>
+    
+</head>
+<body>
+
+    <h1>Форма регистрации</h1>
+
+    <form action="/register-endpoint" method="POST">
+
+        <!-- Блок 1: Личные данные -->
+        <fieldset>
+            <legend>Личные данные</legend>
+
+            <div>
+                <label for="firstName">Имя:</label>
+                <input 
+                    type="text" 
+                    id="firstName" 
+                    name="firstName" 
+                    required>
+            </div>
+
+            <div>
+                <label for="birthDate">Дата рождения:</label>
+                <input 
+                    type="date" 
+                    id="birthDate" 
+                    name="birthDate"
+                    min="1926-01-01"
+                    max="2008-12-31">
+            </div>
+
+            <div>
+                <span>Пол:</span><br>
+
+                <input 
+                    type="radio" 
+                    id="male" 
+                    name="gender" 
+                    value="male">
+                <label for="male">Мужской</label>
+
+                <input 
+                    type="radio" 
+                    id="female" 
+                    name="gender" 
+                    value="female">
+                <label for="female">Женский</label>
+
+                <input 
+                    type="radio" 
+                    id="other" 
+                    name="gender" 
+                    value="other">
+                <label for="other">Другое</label>
+            </div>
+
+        </fieldset>
+
+        <!-- Блок 2: Данные аккаунта -->
+        <fieldset>
+            <legend>Данные аккаунта</legend>
+
+            <div>
+                <label for="email">Email:</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required>
+            </div>
+
+            <div>
+                <label for="phone">Номер телефона:</label>
+                <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone"
+                    pattern="^\+?[0-9]{10,14}$"
+                    title="Введите номер телефона в формате +1234567890 (10–14 цифр)">
+            </div>
+
+            <div>
+                <label for="password">Пароль:</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    minlength="8"
+                    required>
+            </div>
+
+        </fieldset>
+
+        <!-- Блок 3: Дополнительная информация -->
+        <fieldset>
+            <legend>Дополнительная информация</legend>
+
+            <div>
+                <label for="country">Страна проживания:</label>
+                <select id="country" name="country" required>
+                    <option value="" disabled selected>Выберите страну...</option>
+                    <option value="azerbaijan">Азербайджан</option>
+                    <option value="russia">Россия</option>
+                    <option value="turkey">Турция</option>
+                    <option value="germany">Германия</option>
+                    <option value="usa">США</option>
+                </select>
+            </div>
+
+            <div>
+                <span>Интересы:</span><br>
+
+                <input type="checkbox" id="sports" name="interests" value="sports">
+                <label for="sports">Спорт</label>
+
+                <input type="checkbox" id="music" name="interests" value="music">
+                <label for="music">Музыка</label>
+
+                <input type="checkbox" id="programming" name="interests" value="programming">
+                <label for="programming">Программирование</label>
+
+                <input type="checkbox" id="travel" name="interests" value="travel">
+                <label for="travel">Путешествия</label>
+            </div>
+
+            <div>
+                <label for="about">О себе:</label><br>
+                <textarea 
+                    id="about" 
+                    name="about"
+                    rows="5" 
+                    cols="40"
+                    maxlength="500">
+                </textarea>
+            </div>
+
+        </fieldset>
+
+        <div>
+            <button type="submit">Зарегистрироваться</button>
+            <button type="reset">Очистить форму</button>
+        </div>
+
+    </form>
+
+</body>
+</html>
